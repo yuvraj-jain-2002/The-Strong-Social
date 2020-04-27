@@ -59,7 +59,17 @@ function submitMorePpl(event) {
 
 function acceptDeclineRequest(event) {
     // TODO Objective 6: perform AJAX POST to accept or decline Friend Request
-    alert('Accept/Decline Button Pressed');
+    // alert('Accept/Decline Button Pressed');
+    let whicheverID = event.target.id;
+    let data = {'decision' : whicheverID};
+    // alert(whicheverID);
+    let url = accept_decline_url;
+    $.post(url,
+           data,
+           function(data)
+           {
+           location.reload();
+           });
 }
 
 /* ********************************************************************************************

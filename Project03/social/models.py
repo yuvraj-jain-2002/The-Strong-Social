@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django import forms
 
 class Interest(models.Model):
     label = models.CharField(max_length=30,primary_key=True)
@@ -29,6 +30,7 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(UserInfo,
                                    related_name='likes')
+    # boolValue = models.BooleanField(default=True)
 
 class FriendRequest(models.Model):
     to_user = models.ForeignKey(UserInfo,
@@ -37,3 +39,10 @@ class FriendRequest(models.Model):
     from_user = models.ForeignKey(UserInfo,
                                   on_delete=models.CASCADE,
                                   related_name='from_users')
+
+class UpdateForm(forms.ModelForm):
+    interest = forms.CharField(max_length=30,required=False)
+    class Meta:
+        model = UserInfo
+        fields = ['employment','location','birthday']
+

@@ -3,8 +3,20 @@
    ********************************************************************************************
    */
 function submitPost(event) {
-    alert('Post Button Pressed');
+    // alert('Post Button Pressed');
     // TODO Objective 8: send contents of post-text via AJAX Post to post_submit_view (reload page upon success)
+    // url = '/home/jainy3/private/CS1XA3/Project03/social/views.py/';
+    let url = post_submit_url;
+    // url
+    let form = $(this);
+    let postData = document.getElementById("post-text").outerText;
+    data = {"postContent":postData};
+    $.post(url,
+           data,
+           function(data)
+           {
+               location.reload();
+           });
 }
 
 /* ********************************************************************************************
@@ -12,8 +24,17 @@ function submitPost(event) {
    ********************************************************************************************
    */
 function submitLike(event) {
-    alert('Like Button Pressed');
+    // alert('Like Button Pressed');
     // TODO Objective 10: send post-n id via AJAX POST to like_view (reload page upon success)
+    let url = like_post_url;
+    let likes = event.target.id;
+    let data = {'postID':likes};
+    $.post(url,
+           data,
+           function(data)
+           {
+           location.reload();
+           });
 }
 
 /* ********************************************************************************************

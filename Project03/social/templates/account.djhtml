@@ -9,16 +9,27 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Change Password</h6>
                     <!--                     TODO Objective 3: Add Password Change Form -->
+                        <form method = "POST">
+                            {% csrf_token %}                            
+                            {{ form.as_p }}
+                            <input type="Submit"></input>
+                        </form>
+
                 </div>
             </div>
         </div>
     </div>
+    <br><br>
     <div class="w3-row-padding">
         <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Update Info</h6>
                     <!--                     TODO Objective 3: Add User Info Update Forms -->
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ update.as_p }}
+                            <input type="Submit"></input>
                 </div>
             </div>
         </div>

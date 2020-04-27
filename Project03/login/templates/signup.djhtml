@@ -4,4 +4,12 @@
 
 {% block middle_column %}
     <!-- TODO Objective 1: implement signup form -->
+    <div class="container">
+        <h1> Register </h1>
+        <form method="post" id="signup_form" action="{% url 'login:signup_view' %}">
+            {% csrf_token %}
+            {{ signup_form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </div>
 {% endblock %}
