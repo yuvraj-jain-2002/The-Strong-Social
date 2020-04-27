@@ -187,7 +187,8 @@ The following points will give an elaborate explanation of what is going on the 
            function(data)
            {
            location.reload();
-           });                                                                       } 
+           });
+    } 
  ```
  - The function **accept_decline_view** in views.py (which is in social directory) fetches the *JSON* data and trims it in order to restore the username of the user who sent the friend request. 
  - If the currently logged-in user has accepted the friend request, then the function adds the corresponding user to the friends data to both of the respective users. After successfully accepting the request, the corresponding entry which included both of the users(*to_user* and *from_user*) in the **FriendRequest** model is deleted.
