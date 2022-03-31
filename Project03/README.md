@@ -1,4 +1,4 @@
-# CS1XA3 PROJECT 03
+# The Strong Social
 
 ## Usage:
 
